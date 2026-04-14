@@ -232,8 +232,21 @@ h1,h2,h3 { font-family: 'Syne', sans-serif; }
 
 <script>
 // ============================================================
-// QUESTION BANK — Privatekonomi, Samhällskunskap 1a, Gy25
+// UNLOCK CHECK — must arrive via vuxenlivet done screen
 // ============================================================
+function checkUnlocked() {
+  // Allow if referrer is index.html / vuxenlivet_spel.html,
+  // OR if unlocked flag set in sessionStorage
+  const ref = document.referrer;
+  const fromGame = ref.includes('index') || ref.includes('vuxenlivet');
+  const flagged = sessionStorage.getItem('vuxenlivet_done') === '1';
+  return fromGame || flagged;
+}
+
+// Set flag when arriving from the game's done screen
+if (document.referrer.includes('index') || document.referrer.includes('vuxenlivet')) {
+  sessionStorage.setItem('vuxenlivet_done', '1');
+}
 const ALL_QUESTIONS = [
   // --- INKOMST & SKATT ---
   {
@@ -833,7 +846,31 @@ function renderResult(app) {
 // ============================================================
 // INIT
 // ============================================================
-render();
+if (!checkUnlocked()) {
+  document.getElementById('app').innerHTML = `
+    <div style="max-width:520px;margin:60px auto 0;padding:0 20px;text-align:center">
+      <div style="font-size:64px;margin-bottom:16px">🔒</div>
+      <h2 style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--text);margin-bottom:10px">
+        Provet är låst
+      </h2>
+      <p style="color:var(--muted);font-size:16px;line-height:1.65;margin-bottom:28px">
+        Du måste först klara <strong style="color:var(--text)">alla 5 nivåer</strong> i Vuxenlivet-appen med godkänt resultat för att låsa upp det här provet.
+      </p>
+      <a href="index.html" style="
+        display:inline-block;
+        background:var(--l1);color:#fff;
+        font-family:'Syne',sans-serif;font-size:16px;font-weight:800;
+        padding:16px 36px;border-radius:12px;text-decoration:none;
+        box-shadow:0 4px 14px rgba(212,80,10,0.25);
+      ">🎮 GÅ TILL VUXENLIVET →</a>
+      <p style="margin-top:20px;font-size:13px;color:var(--muted)">
+        Klara spelet → certifikatsidan → knappen "Gå till provet" låses upp
+      </p>
+    </div>
+  `;
+} else {
+  render();
+}
 </script>
 </body>
 </html>
