@@ -175,12 +175,9 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .float-calc-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: transparent;
   z-index: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 0.15s ease;
+  pointer-events: none;
 }
 .float-calc-box {
   background: var(--surface);
@@ -189,13 +186,25 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
   padding: 20px;
   width: 280px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 501;
+  pointer-events: all;
+  cursor: default;
+  user-select: none;
 }
 .float-calc-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 12px;
+  cursor: grab;
+  padding: 2px 0 8px;
+  border-bottom: 1px solid var(--border);
 }
+.float-calc-header:active { cursor: grabbing; }
 .float-calc-title {
   font-family: 'Syne', sans-serif;
   font-size: 14px;
@@ -516,9 +525,9 @@ function openCalc() {
   overlay.id = 'floatCalcOverlay';
   overlay.className = 'float-calc-overlay';
   overlay.innerHTML = `
-    <div class="float-calc-box" onclick="event.stopPropagation()">
-      <div class="float-calc-header">
-        <span class="float-calc-title">🧮 Miniräknare</span>
+    <div class="float-calc-box" id="floatCalcBox">
+      <div class="float-calc-header" id="floatCalcHandle">
+        <span class="float-calc-title">🧮 Miniräknare <span style="font-size:11px;font-weight:400;color:var(--muted)">— dra för att flytta</span></span>
         <button class="float-calc-close" onclick="closeCalc()">✕</button>
       </div>
       <div class="float-calc-display">
@@ -552,10 +561,61 @@ function openCalc() {
         <button class="cb eq" style="grid-column:span 4;padding:14px" onclick="calcEquals()">=</button>
       </div>
     </div>`;
-  overlay.addEventListener('click', closeCalc);
   document.body.appendChild(overlay);
   CALC.expr=''; CALC.result='0'; CALC.op=null; CALC.prev=null; CALC.newNum=true;
   updateCalcDisplay();
+
+  // ── DRAG LOGIC ──────────────────────────────────────────
+  const box = document.getElementById('floatCalcBox');
+  const handle = document.getElementById('floatCalcHandle');
+
+  // Position at center on open
+  const rect = box.getBoundingClientRect();
+  box.style.transform = 'none';
+  box.style.left = Math.round((window.innerWidth - rect.width) / 2) + 'px';
+  box.style.top  = Math.round((window.innerHeight - box.offsetHeight) / 2) + 'px';
+
+  let startX, startY, startLeft, startTop, dragging = false;
+
+  handle.addEventListener('mousedown', dragStart);
+  handle.addEventListener('touchstart', dragStart, { passive: false });
+
+  function dragStart(e) {
+    e.preventDefault();
+    dragging = true;
+    const pos = e.touches ? e.touches[0] : e;
+    startX = pos.clientX;
+    startY = pos.clientY;
+    startLeft = parseInt(box.style.left) || box.offsetLeft;
+    startTop  = parseInt(box.style.top)  || box.offsetTop;
+    handle.style.cursor = 'grabbing';
+    document.addEventListener('mousemove', dragMove);
+    document.addEventListener('touchmove', dragMove, { passive: false });
+    document.addEventListener('mouseup',   dragEnd);
+    document.addEventListener('touchend',  dragEnd);
+  }
+
+  function dragMove(e) {
+    if (!dragging) return;
+    e.preventDefault();
+    const pos = e.touches ? e.touches[0] : e;
+    const dx = pos.clientX - startX;
+    const dy = pos.clientY - startY;
+    // Keep within viewport
+    const maxLeft = window.innerWidth  - box.offsetWidth  - 8;
+    const maxTop  = window.innerHeight - box.offsetHeight - 8;
+    box.style.left = Math.max(8, Math.min(maxLeft, startLeft + dx)) + 'px';
+    box.style.top  = Math.max(8, Math.min(maxTop,  startTop  + dy)) + 'px';
+  }
+
+  function dragEnd() {
+    dragging = false;
+    handle.style.cursor = 'grab';
+    document.removeEventListener('mousemove', dragMove);
+    document.removeEventListener('touchmove', dragMove);
+    document.removeEventListener('mouseup',   dragEnd);
+    document.removeEventListener('touchend',  dragEnd);
+  }
 }
 
 function closeCalc() {
