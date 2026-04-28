@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VUXENLIVET — Ekonomispelet</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #F4F6F9;
+  --bg: #fafafa;
   --surface: #FFFFFF;
   --border: #D1D9E0;
   --border-strong: #B0BCC8;
-  --text: #1A2332;
+  --text: #1a1a1a;
   --muted: #4A5568;
   --l1: #D4500A;
   --l2: #1A6FB5;
@@ -38,14 +38,16 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'DM Sans', system-ui, sans-serif;
-  font-size: 16px;
+  font-family: 'Inter', Arial, Verdana, sans-serif;
+  font-size: 17px;
   min-height: 100vh;
-  line-height: 1.5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 h1, h2, h3, .level-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', Arial, Verdana, sans-serif;
   color: var(--text);
+  font-weight: 700;
 }
 
 /* HEADER */
@@ -61,7 +63,7 @@ h1, h2, h3, .level-title {
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.logo { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
+.logo { font-family: 'Inter', Arial, Verdana, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -0.5px; color: var(--text); }
 .logo span { color: var(--l1); }
 
 /* PROGRESS */
@@ -69,7 +71,7 @@ h1, h2, h3, .level-title {
 .progress-dot {
   width: 36px; height: 36px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 800;
+  font-family: 'Inter', Arial, Verdana, sans-serif; font-size: 13px; font-weight: 800;
   border: 2px solid var(--border-strong); background: var(--bg); color: var(--muted);
   cursor: default; transition: all 0.3s;
 }
@@ -108,7 +110,7 @@ h1, h2, h3, .level-title {
 .fact-box {
   background: #EBF4FD; border-left: 4px solid var(--l2);
   border-radius: 0 8px 8px 0; padding: 16px 18px; margin: 16px 0;
-  font-size: 15px; line-height: 1.65; color: var(--text);
+  font-size: 17px; line-height: 1.6; color: var(--text); max-width: 65ch;
 }
 .fact-box strong { font-weight: 700; }
 
@@ -116,7 +118,7 @@ h1, h2, h3, .level-title {
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
 .info-cell { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
 .info-cell .label { font-size: 12px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
-.info-cell .value { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); }
+.info-cell .value { font-family: 'Inter', Arial, Verdana, sans-serif; font-size: 22px; font-weight: 700; color: var(--text); }
 .info-cell .value.green { color: var(--success); }
 .info-cell .value.orange { color: var(--l1); }
 .info-cell .value.blue { color: var(--l2); }
@@ -128,7 +130,7 @@ h1, h2, h3, .level-title {
 .quiz-opt {
   background: var(--surface); border: 2px solid var(--border); border-radius: 10px;
   padding: 13px 16px; cursor: pointer; font-size: 15px; transition: all 0.15s;
-  text-align: left; color: var(--text); font-family: 'DM Sans', sans-serif;
+  text-align: left; color: var(--text); font-family: 'Inter', Arial, Verdana, sans-serif;
 }
 .quiz-opt:hover:not(.locked) { border-color: var(--l2); background: #EBF4FD; }
 .quiz-opt.correct { border-color: var(--success); background: #E8F5EE; color: #0E5C30; font-weight: 600; }
@@ -139,7 +141,7 @@ h1, h2, h3, .level-title {
 .calc-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); gap: 12px; }
 .calc-row:last-child { border-bottom: none; }
 .calc-label { font-size: 15px; color: var(--text); flex: 1; }
-.calc-value { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--text); min-width: 100px; text-align: right; }
+.calc-value { font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 700; font-size: 16px; color: var(--text); min-width: 100px; text-align: right; }
 .calc-value.negative { color: var(--danger); }
 .calc-value.positive { color: var(--success); }
 .calc-total { background: var(--bg); border: 1px solid var(--border-strong); border-radius: 10px; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; margin-top: 8px; font-weight: 700; color: var(--text); }
@@ -149,7 +151,7 @@ h1, h2, h3, .level-title {
 .slider-label { font-size: 14px; color: var(--text); width: 145px; flex-shrink: 0; font-weight: 500; }
 input[type=range] { -webkit-appearance: none; flex: 1; height: 7px; border-radius: 4px; background: var(--border-strong); outline: none; }
 input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: var(--l1); cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.25); }
-.slider-val { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; min-width: 80px; text-align: right; color: var(--l1); }
+.slider-val { font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 700; font-size: 15px; min-width: 80px; text-align: right; color: var(--l1); }
 
 /* MINI CALCULATOR */
 /* FLOATING CALCULATOR */
@@ -161,7 +163,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
   border: 2px solid var(--l2);
   border-radius: 9px;
   padding: 9px 16px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', Arial, Verdana, sans-serif;
   font-size: 13px;
   font-weight: 800;
   color: var(--l2);
@@ -179,12 +181,14 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
   z-index: 500;
   pointer-events: none;
 }
+.cb.pwr { background: #FEF3E2; color: var(--warning); border-color: var(--warning-border); font-weight: 800; }
+.cb.pwr:hover { background: var(--warning); color: #fff; }
 .float-calc-box {
   background: var(--surface);
   border: 2px solid var(--l2);
   border-radius: 16px;
   padding: 20px;
-  width: 280px;
+  width: 300px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.2);
   position: fixed;
   top: 50%;
@@ -206,7 +210,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 }
 .float-calc-header:active { cursor: grabbing; }
 .float-calc-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', Arial, Verdana, sans-serif;
   font-size: 14px;
   font-weight: 800;
   color: var(--l2);
@@ -227,7 +231,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
   border: 2px solid var(--border-strong);
   border-radius: 9px;
   padding: 12px 14px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', Arial, Verdana, sans-serif;
   font-size: 24px;
   font-weight: 800;
   text-align: right;
@@ -256,7 +260,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
   border: 1.5px solid var(--border);
   border-radius: 8px;
   padding: 13px 4px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Inter', Arial, Verdana, sans-serif;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -271,13 +275,49 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .cb.clr { background: #FDECEA; color: var(--danger); border-color: var(--danger-border); }
 .cb.pct-btn { background: var(--warning-bg); color: var(--warning); border-color: var(--warning-border); }
 
+/* CAR BUDGET */
+.car-card-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+.car-card{background:var(--surface);border:2px solid var(--border);border-radius:14px;overflow:hidden;}
+.car-card.budget-car{border-color:var(--success);}
+.car-card.premium-car{border-color:var(--l2);}
+.car-img{width:100%;height:160px;object-fit:cover;background:var(--bg);display:block;}
+.car-img-err{width:100%;height:160px;background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:52px;}
+.car-details{padding:14px 16px;}
+.car-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:800;font-family:'Inter', Arial, Verdana, sans-serif;margin-bottom:6px;}
+.car-badge.budget{background:var(--success-bg);color:var(--success);}
+.car-badge.premium{background:var(--info-bg);color:var(--l2);}
+.car-name{font-family:'Inter', Arial, Verdana, sans-serif;font-weight:800;font-size:15px;margin-bottom:2px;}
+.car-spec{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:8px;}
+.car-price-tag{font-family:'Inter', Arial, Verdana, sans-serif;font-size:22px;font-weight:800;}
+.car-price-tag.bud{color:var(--success);}
+.car-price-tag.prem{color:var(--l2);}
+.rate-gradient{height:10px;background:linear-gradient(to right,#1A7A4A 0%,#D97706 45%,#C0392B 75%,#7B0000 100%);border-radius:5px;position:relative;margin:8px 0 4px;}
+.rate-thumb{position:absolute;top:-4px;width:18px;height:18px;background:var(--l1);border:2px solid #fff;border-radius:50%;transform:translateX(-50%);box-shadow:0 1px 5px rgba(0,0,0,0.3);transition:left 0.15s;pointer-events:none;}
+.rate-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);font-weight:600;}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px;margin:10px 0;}
+.compare-table th{background:var(--bg);font-family:'Inter', Arial, Verdana, sans-serif;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);padding:8px 10px;text-align:left;border-bottom:2px solid var(--border);}
+.compare-table td{padding:9px 10px;border-bottom:1px solid var(--border);}
+.compare-table tr:last-child td{border-bottom:none;font-weight:700;background:var(--bg);}
+.compare-table .danger{color:var(--danger);font-weight:700;}
+.compare-table .ok{color:var(--success);font-weight:700;}
+.total-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+.total-box{border-radius:10px;padding:14px 16px;text-align:center;}
+.total-box.bud{background:var(--success-bg);border:1px solid var(--success-border);}
+.total-box.prem{background:var(--info-bg);border:1px solid var(--info-border);}
+.total-box .tbl{font-size:11px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;font-weight:700;}
+.total-box .tbv{font-family:'Inter', Arial, Verdana, sans-serif;font-size:22px;font-weight:800;}
+.total-box.bud .tbv{color:var(--success);}
+.total-box.prem .tbv{color:var(--l2);}
+.nom-eff-box{background:var(--warning-bg);border-left:4px solid var(--l1);border-radius:0 10px 10px 0;padding:14px 16px;margin:12px 0;font-size:14px;line-height:1.65;}
+@media(max-width:520px){.car-card-wrap,.total-compare{grid-template-columns:1fr;}}
+
 /* NUMBER INPUT */
 .num-input-wrap { display: flex; align-items: center; gap: 8px; }
-.num-input { background: var(--surface); border: 2px solid var(--border-strong); border-radius: 8px; padding: 10px 14px; color: var(--text); font-size: 18px; font-family: 'Syne', sans-serif; font-weight: 700; width: 150px; text-align: right; }
+.num-input { background: var(--surface); border: 2px solid var(--border-strong); border-radius: 8px; padding: 10px 14px; color: var(--text); font-size: 18px; font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 700; width: 150px; text-align: right; }
 .num-input:focus { outline: none; border-color: var(--l2); background: #EBF4FD; }
 
 /* BUTTONS */
-.btn { background: var(--l1); color: #fff; border: none; border-radius: 10px; padding: 14px 28px; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; cursor: pointer; transition: all 0.15s; letter-spacing: 0.3px; }
+.btn { background: var(--l1); color: #fff; border: none; border-radius: 10px; padding: 14px 28px; font-family: 'Inter', Arial, Verdana, sans-serif; font-size: 15px; font-weight: 800; cursor: pointer; transition: all 0.15s; letter-spacing: 0.3px; }
 .btn:hover { transform: translateY(-1px); filter: brightness(1.08); }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
 .btn-secondary { background: var(--surface); border: 2px solid var(--border-strong); color: var(--text); }
@@ -288,17 +328,17 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .btn-row { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
 
 /* UNDO BUTTON */
-.btn-undo { background: none; border: 1px solid var(--border-strong); border-radius: 8px; color: var(--muted); padding: 7px 14px; font-size: 13px; cursor: pointer; transition: all 0.2s; margin-top: 8px; display: inline-block; font-family: 'DM Sans', sans-serif; }
+.btn-undo { background: none; border: 1px solid var(--border-strong); border-radius: 8px; color: var(--muted); padding: 7px 14px; font-size: 13px; cursor: pointer; transition: all 0.2s; margin-top: 8px; display: inline-block; font-family: 'Inter', Arial, Verdana, sans-serif; }
 .btn-undo:hover { border-color: #92600A; color: #92600A; background: #FEF3E2; }
 
 /* PRINT BUTTON */
-.print-btn { background: none; border: 1px solid var(--border-strong); border-radius: 8px; color: var(--muted); padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+.print-btn { background: none; border: 1px solid var(--border-strong); border-radius: 8px; color: var(--muted); padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all 0.2s; font-family: 'Inter', Arial, Verdana, sans-serif; }
 .print-btn:hover { border-color: var(--l1); color: var(--l1); background: #FEF0E8; }
 
 /* GODKÄNT BADGE */
 .approved-banner { background: #E8F5EE; border: 2px solid #A3D4B5; border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 16px; margin: 20px 0; }
 .approved-check { font-size: 36px; }
-.approved-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--success); }
+.approved-title { font-family: 'Inter', Arial, Verdana, sans-serif; font-size: 20px; font-weight: 800; color: var(--success); }
 .approved-sub { font-size: 14px; color: var(--muted); margin-top: 4px; font-weight: 500; }
 
 /* CHARACTER SELECT */
@@ -310,7 +350,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .char-card.selected .undo-tag { display: inline-block; margin-top: 8px; font-size: 12px; color: var(--muted); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 10px; cursor: pointer; transition: all 0.2s; background: var(--surface); }
 .char-card.selected .undo-tag:hover { color: var(--l1); border-color: var(--l1); }
 .char-emoji { font-size: 36px; margin-bottom: 10px; }
-.char-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 15px; margin-bottom: 4px; color: var(--text); }
+.char-name { font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 800; font-size: 15px; margin-bottom: 4px; color: var(--text); }
 .char-salary { font-size: 13px; color: var(--muted); line-height: 1.6; }
 .char-salary strong { color: var(--success); }
 
@@ -319,7 +359,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .housing-card { background: var(--surface); border: 2px solid var(--border); border-radius: 14px; padding: 20px; cursor: pointer; transition: all 0.15s; }
 .housing-card:hover { border-color: var(--l2); background: #EBF4FD; }
 .housing-card.selected { border-color: var(--l1); background: #FEF0E8; }
-.housing-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px; margin: 8px 0 6px; color: var(--text); }
+.housing-title { font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 800; font-size: 17px; margin: 8px 0 6px; color: var(--text); }
 .housing-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
 /* RESULT BOX */
@@ -329,13 +369,13 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .result-box.neutral { border: 1px solid var(--border); }
 
 /* FEEDBACK */
-.feedback { padding: 13px 16px; border-radius: 10px; margin: 10px 0; font-size: 15px; line-height: 1.55; font-weight: 500; }
+.feedback { padding: 13px 16px; border-radius: 10px; margin: 10px 0; font-size: 16px; line-height: 1.6; font-weight: 400; }
 .feedback.ok { background: #E8F5EE; color: #0E5C30; border: 1px solid #A3D4B5; }
 .feedback.err { background: #FDECEA; color: #9B2010; border: 1px solid #F5A89A; }
 .feedback.info { background: #FEF3E2; color: #7A4F08; border: 1px solid #F5C97A; }
 
 /* HINT BOX */
-.hint-box { background: #F0F7E8; border: 2px dashed #7DB54A; border-radius: 10px; padding: 13px 16px; margin: 10px 0 4px; font-size: 15px; color: #2D5016; line-height: 1.55; font-weight: 500; }
+.hint-box { background: #F0F7E8; border: 2px dashed #7DB54A; border-radius: 10px; padding: 13px 16px; margin: 10px 0 4px; font-size: 16px; color: #2D5016; line-height: 1.6; font-weight: 400; }
 .hint-box strong { color: #1E3A0E; font-weight: 700; }
 
 /* SCENARIO CARDS */
@@ -359,11 +399,11 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .budget-table { width: 100%; border-collapse: collapse; }
 .budget-table tr td { padding: 10px 12px; font-size: 14px; border-bottom: 1px solid var(--border); color: var(--text); }
 .budget-table tr:last-child td { border-bottom: none; }
-.budget-table .section-header td { background: var(--bg); font-family: 'Syne', sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); padding: 8px 12px; font-weight: 700; }
-.budget-table .amount { text-align: right; font-family: 'Syne', sans-serif; font-weight: 700; }
+.budget-table .section-header td { background: var(--bg); font-family: 'Inter', Arial, Verdana, sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); padding: 8px 12px; font-weight: 700; }
+.budget-table .amount { text-align: right; font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 700; }
 .budget-table .negative { color: var(--danger); }
 .budget-table .positive { color: var(--success); }
-.budget-table .total-row td { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; background: var(--bg); padding: 14px 12px; border-top: 2px solid var(--border-strong); color: var(--text); }
+.budget-table .total-row td { font-family: 'Inter', Arial, Verdana, sans-serif; font-weight: 800; font-size: 16px; background: var(--bg); padding: 14px 12px; border-top: 2px solid var(--border-strong); color: var(--text); }
 
 /* REPORÄNTA VISUAL */
 .repo-visual { display: flex; align-items: flex-end; gap: 6px; height: 90px; margin: 16px 0 4px; padding: 0 4px; }
@@ -382,7 +422,7 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
 .intro-hero { text-align: center; padding: 40px 20px; }
 .intro-hero h1 { font-size: clamp(36px, 7vw, 58px); font-weight: 800; letter-spacing: -2px; line-height: 1; color: var(--text); }
 .intro-hero h1 .highlight { color: var(--l1); }
-.intro-sub { color: var(--muted); font-size: 17px; margin: 16px auto 32px; line-height: 1.6; max-width: 500px; }
+.intro-sub { color: var(--muted); font-size: 17px; margin: 16px auto 32px; line-height: 1.6; max-width: 65ch; }
 .step-pills { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
 .step-pill { background: var(--surface); border: 1px solid var(--border-strong); border-radius: 20px; padding: 6px 14px; font-size: 13px; color: var(--muted); font-weight: 500; }
 .step-pill .num { color: var(--l1); font-weight: 700; margin-right: 4px; }
@@ -442,7 +482,17 @@ const GS = {
   l4: { choice: null },
   l5: { wheel: { jobb: 5, fritid: 5, motion: 5, familj: 5, vanner: 5, hobby: 5 } },
   attempts: { l1_q1:0, l1_q2:0, l1_net:0, l2_q1:0, l2_annual:0 },
-  car: { own: false, price: 120000, loanType: 'billan', rate: 7, months: 60, tax: 130, insurance: 500, service: 250, besiktning: 100, km: 1500, fuel: 0.8, fuelPrice: 22 },
+  car: {
+    // Level 3 — din egen bil
+    own: false, price: 120000, loanType: 'billan',
+    rate: 7, months: 60,
+    tax: 130, insurance: 500, service: 250, besiktning: 100,
+    km: 1500, fuel: 0.8, fuelPrice: 22,
+    // Bilbudget-jämförelsen
+    budIns: 1200, budFuel: 600, budService: 300,
+    premIns: 1800, premFuel: 900, premService: 500,
+  },
+  carQuiz: { answers: {}, done: false },
 };
 
 // ============================================================
@@ -517,7 +567,162 @@ const fmt = (n) => n.toLocaleString('sv-SE') + ' kr';
 // ============================================================
 // FLOATING CALCULATOR
 // ============================================================
-const CALC = { expr: '', result: '0', op: null, prev: null, newNum: true };
+// ============================================================
+// FLOATING CALCULATOR — expression-based with ( ) and ^
+// ============================================================
+const CALC = { expr: '', justEvaled: false };
+
+// ── Expression evaluator (recursive descent, no eval()) ────
+function calcEval(str) {
+  str = str.trim()
+    .replace(/×/g,'*').replace(/÷/g,'/')
+    .replace(/−/g,'-').replace(/\s+/g,'');
+  if (!str) return NaN;
+  let pos = 0;
+  function peek() { return str[pos]; }
+  function consume() { return str[pos++]; }
+  function parseExpr() {
+    let left = parseTerm();
+    while (pos < str.length && (peek()==='+' || (peek()==='-' && pos > 0))) {
+      const op = consume();
+      left = op==='+' ? left + parseTerm() : left - parseTerm();
+    }
+    return left;
+  }
+  function parseTerm() {
+    let left = parsePower();
+    while (pos < str.length && (peek()==='*' || peek()==='/')) {
+      const op = consume();
+      const right = parsePower();
+      left = op==='*' ? left * right : right !== 0 ? left / right : NaN;
+    }
+    return left;
+  }
+  function parsePower() {
+    const base = parseUnary();
+    if (pos < str.length && peek()==='^') {
+      consume();
+      const exp = parseUnary(); // right-assoc: recurse into unary again
+      return Math.pow(base, exp);
+    }
+    return base;
+  }
+  function parseUnary() {
+    if (peek() === '-') { consume(); return -parsePrimary(); }
+    if (peek() === '+') { consume(); return parsePrimary(); }
+    return parsePrimary();
+  }
+  function parsePrimary() {
+    if (peek() === '(') {
+      consume();
+      const val = parseExpr();
+      if (peek() === ')') consume();
+      return val;
+    }
+    // number
+    let s = '';
+    while (pos < str.length && /[0-9.]/.test(peek())) s += consume();
+    return s === '' ? NaN : parseFloat(s);
+  }
+  try { const v = parseExpr(); return isFinite(v) ? v : NaN; }
+  catch(e) { return NaN; }
+}
+
+// ── Display helpers ─────────────────────────────────────────
+function calcDisplayStr(expr) {
+  return expr.replace(/\*/g,'×').replace(/\//g,'÷').replace(/-/g,'−');
+}
+
+function updateCalcDisplay() {
+  const exprEl = document.getElementById('calcExpr');
+  const dispEl = document.getElementById('calcDisplay');
+  if (!exprEl || !dispEl) return;
+  exprEl.textContent = calcDisplayStr(CALC.expr);
+  // Show live result preview if expression is non-empty and not just evaled
+  if (CALC.expr && !CALC.justEvaled) {
+    const preview = calcEval(CALC.expr);
+    dispEl.textContent = isNaN(preview) ? '' : '';
+  }
+  // Show current expr end (last token) in main display
+  const parts = CALC.expr.match(/[0-9.]+$/) ;
+  dispEl.textContent = CALC.justEvaled
+    ? calcDisplayStr(CALC.expr)
+    : (parts ? Number(parts[0]).toLocaleString('sv-SE', {maximumFractionDigits:10}) : calcDisplayStr(CALC.expr) || '0');
+}
+
+// ── Input handlers ──────────────────────────────────────────
+function calcInput(ch) {
+  if (CALC.justEvaled) {
+    // after = : if digit/dot start fresh, if operator continue
+    if (/[0-9.(]/.test(ch)) { CALC.expr = ch; }
+    else { /* keep result as base, append operator */ }
+    CALC.justEvaled = false;
+  } else {
+    CALC.expr += ch;
+  }
+  updateCalcDisplay();
+}
+
+function calcNum(d) { calcInput(d); }
+
+function calcOp(op) {
+  const sym = op==='×'?'*': op==='÷'?'/': op==='−'?'-': op;
+  if (CALC.justEvaled) CALC.justEvaled = false;
+  // Replace trailing operator if last char is one
+  if (CALC.expr && /[+\-*/^]$/.test(CALC.expr)) {
+    CALC.expr = CALC.expr.slice(0,-1) + sym;
+  } else {
+    CALC.expr += sym;
+  }
+  updateCalcDisplay();
+}
+
+function calcParen(p) { calcInput(p); }
+
+function calcPower() { calcOp('^'); }
+
+function calcEquals() {
+  if (!CALC.expr) return;
+  const result = calcEval(CALC.expr);
+  if (isNaN(result)) {
+    document.getElementById('calcDisplay').textContent = 'Fel';
+    return;
+  }
+  const rounded = Math.round(result * 1e10) / 1e10;
+  const display = rounded.toLocaleString('sv-SE', {maximumFractionDigits:10});
+  document.getElementById('calcExpr').textContent = calcDisplayStr(CALC.expr) + ' =';
+  document.getElementById('calcDisplay').textContent = display;
+  CALC.expr = String(rounded);
+  CALC.justEvaled = true;
+}
+
+function calcC() {
+  CALC.expr = ''; CALC.justEvaled = false;
+  document.getElementById('calcExpr').textContent = '';
+  document.getElementById('calcDisplay').textContent = '0';
+}
+
+function calcBack() {
+  if (CALC.justEvaled) { calcC(); return; }
+  CALC.expr = CALC.expr.slice(0, -1);
+  updateCalcDisplay();
+}
+
+function calcSign() {
+  // Wrap entire expression in negation or negate trailing number
+  if (!CALC.expr) return;
+  const m = CALC.expr.match(/(-?)([0-9.]+)$/);
+  if (m) {
+    const neg = m[1] ? '' : '-';
+    CALC.expr = CALC.expr.slice(0, -m[0].length) + neg + m[2];
+    updateCalcDisplay();
+  }
+}
+
+function calcPct() {
+  const v = calcEval(CALC.expr);
+  if (!isNaN(v)) { CALC.expr = String(v / 100); CALC.justEvaled = false; updateCalcDisplay(); }
+}
 
 function openCalc() {
   if (document.getElementById('floatCalcOverlay')) return;
@@ -535,9 +740,14 @@ function openCalc() {
         <span id="calcDisplay">0</span>
       </div>
       <div class="calc-btns">
-        <button class="cb clr" onclick="calcC()">C</button>
-        <button class="cb op" onclick="calcSign()">+/−</button>
-        <button class="cb pct-btn" onclick="calcPct()">%</button>
+        <button class="cb clr" onclick="calcC()" title="Rensa allt">C</button>
+        <button class="cb op" onclick="calcParen('(')" title="Öppna parentes">(</button>
+        <button class="cb op" onclick="calcParen(')')" title="Stäng parentes">)</button>
+        <button class="cb op" onclick="calcBack()" title="Radera sista tecken">⌫</button>
+
+        <button class="cb pct-btn" onclick="calcPct()" title="Procent">%</button>
+        <button class="cb op" onclick="calcSign()" title="Byt tecken">+/−</button>
+        <button class="cb op pwr" onclick="calcPower()" title="Upphöjt till (x^y)">xʸ</button>
         <button class="cb op" onclick="calcOp('÷')">÷</button>
 
         <button class="cb" onclick="calcNum('7')">7</button>
@@ -560,122 +770,55 @@ function openCalc() {
 
         <button class="cb eq" style="grid-column:span 4;padding:14px" onclick="calcEquals()">=</button>
       </div>
+      <div style="font-size:11px;color:var(--muted);margin-top:10px;line-height:1.5;padding:0 2px">
+        💡 Skriv formel direkt, t.ex.:<br>
+        <code style="font-size:11px;color:var(--l2)">7÷100÷12×80000÷(1−(1+7÷100÷12)^−60)</code>
+      </div>
     </div>`;
   document.body.appendChild(overlay);
-  CALC.expr=''; CALC.result='0'; CALC.op=null; CALC.prev=null; CALC.newNum=true;
-  updateCalcDisplay();
+  CALC.expr = ''; CALC.justEvaled = false;
 
   // ── DRAG LOGIC ──────────────────────────────────────────
   const box = document.getElementById('floatCalcBox');
   const handle = document.getElementById('floatCalcHandle');
-
-  // Position at center on open
-  const rect = box.getBoundingClientRect();
   box.style.transform = 'none';
-  box.style.left = Math.round((window.innerWidth - rect.width) / 2) + 'px';
-  box.style.top  = Math.round((window.innerHeight - box.offsetHeight) / 2) + 'px';
+  box.style.left = Math.round((window.innerWidth - 300) / 2) + 'px';
+  box.style.top  = Math.max(20, Math.round((window.innerHeight - 520) / 2)) + 'px';
 
   let startX, startY, startLeft, startTop, dragging = false;
-
   handle.addEventListener('mousedown', dragStart);
   handle.addEventListener('touchstart', dragStart, { passive: false });
 
   function dragStart(e) {
-    e.preventDefault();
-    dragging = true;
+    e.preventDefault(); dragging = true;
     const pos = e.touches ? e.touches[0] : e;
-    startX = pos.clientX;
-    startY = pos.clientY;
-    startLeft = parseInt(box.style.left) || box.offsetLeft;
-    startTop  = parseInt(box.style.top)  || box.offsetTop;
+    startX = pos.clientX; startY = pos.clientY;
+    startLeft = parseInt(box.style.left)||box.offsetLeft;
+    startTop  = parseInt(box.style.top)||box.offsetTop;
     handle.style.cursor = 'grabbing';
     document.addEventListener('mousemove', dragMove);
     document.addEventListener('touchmove', dragMove, { passive: false });
-    document.addEventListener('mouseup',   dragEnd);
-    document.addEventListener('touchend',  dragEnd);
+    document.addEventListener('mouseup', dragEnd);
+    document.addEventListener('touchend', dragEnd);
   }
-
   function dragMove(e) {
-    if (!dragging) return;
-    e.preventDefault();
+    if (!dragging) return; e.preventDefault();
     const pos = e.touches ? e.touches[0] : e;
-    const dx = pos.clientX - startX;
-    const dy = pos.clientY - startY;
-    // Keep within viewport
-    const maxLeft = window.innerWidth  - box.offsetWidth  - 8;
-    const maxTop  = window.innerHeight - box.offsetHeight - 8;
-    box.style.left = Math.max(8, Math.min(maxLeft, startLeft + dx)) + 'px';
-    box.style.top  = Math.max(8, Math.min(maxTop,  startTop  + dy)) + 'px';
+    box.style.left = Math.max(8, Math.min(window.innerWidth-box.offsetWidth-8, startLeft+pos.clientX-startX)) + 'px';
+    box.style.top  = Math.max(8, Math.min(window.innerHeight-box.offsetHeight-8, startTop+pos.clientY-startY)) + 'px';
   }
-
   function dragEnd() {
-    dragging = false;
-    handle.style.cursor = 'grab';
+    dragging = false; handle.style.cursor = 'grab';
     document.removeEventListener('mousemove', dragMove);
     document.removeEventListener('touchmove', dragMove);
-    document.removeEventListener('mouseup',   dragEnd);
-    document.removeEventListener('touchend',  dragEnd);
+    document.removeEventListener('mouseup', dragEnd);
+    document.removeEventListener('touchend', dragEnd);
   }
 }
 
 function closeCalc() {
   const el = document.getElementById('floatCalcOverlay');
   if (el) el.remove();
-}
-
-function updateCalcDisplay() {
-  const disp = document.getElementById('calcDisplay');
-  const expr = document.getElementById('calcExpr');
-  if (disp) {
-    const n = parseFloat(CALC.result);
-    disp.textContent = isNaN(n) ? 'Fel' : n.toLocaleString('sv-SE', {maximumFractionDigits:8});
-  }
-  if (expr) expr.textContent = CALC.expr;
-}
-
-function calcNum(d) {
-  if (CALC.newNum) { CALC.result = d === '.' ? '0.' : d; CALC.newNum = false; }
-  else if (d === '.' && CALC.result.includes('.')) return;
-  else if (CALC.result === '0' && d !== '.') CALC.result = d;
-  else CALC.result += d;
-  updateCalcDisplay();
-}
-
-function calcOp(op) {
-  CALC.prev = parseFloat(CALC.result);
-  CALC.expr = CALC.result + ' ' + op;
-  CALC.op = op;
-  CALC.newNum = true;
-  updateCalcDisplay();
-}
-
-function calcEquals() {
-  if (!CALC.op || CALC.prev === null) return;
-  const cur = parseFloat(CALC.result);
-  let res;
-  if (CALC.op === '+') res = CALC.prev + cur;
-  else if (CALC.op === '−') res = CALC.prev - cur;
-  else if (CALC.op === '×') res = CALC.prev * cur;
-  else if (CALC.op === '÷') res = cur !== 0 ? CALC.prev / cur : NaN;
-  CALC.expr = CALC.expr + ' ' + CALC.result + ' =';
-  CALC.result = isNaN(res) ? 'Fel' : String(Math.round(res * 1e8) / 1e8);
-  CALC.op = null; CALC.prev = null; CALC.newNum = true;
-  updateCalcDisplay();
-}
-
-function calcC() {
-  CALC.expr=''; CALC.result='0'; CALC.op=null; CALC.prev=null; CALC.newNum=true;
-  updateCalcDisplay();
-}
-
-function calcSign() {
-  CALC.result = String(-parseFloat(CALC.result));
-  updateCalcDisplay();
-}
-
-function calcPct() {
-  CALC.result = String(parseFloat(CALC.result) / 100);
-  updateCalcDisplay();
 }
 
 // ============================================================
@@ -694,7 +837,8 @@ function render() {
   else if (GS.screen === 'level3') app.innerHTML = renderLevel3();
   else if (GS.screen === 'level4') app.innerHTML = renderLevel4();
   else if (GS.screen === 'level5') app.innerHTML = renderLevel5();
-  else if (GS.screen === 'done')   app.innerHTML = renderDone();
+  else if (GS.screen === 'done')        app.innerHTML = renderDone();
+  else if (GS.screen === 'carbudget')   app.innerHTML = renderCarBudget();
 
   bindEvents();
   if (GS.screen === 'level5') drawWheel();
@@ -945,14 +1089,14 @@ function renderLevel2() {
         </div>`).join('')}
     </div>
     <div class="quiz-section">
-      <div class="quiz-q">❓ Vem bestämmer styrräntan (reporäntan) i Sverige?</div>
+      <div class="quiz-q">❓ Vem bestämmer reporänta (styr-ränta)n (styr-ränta) i Sverige?</div>
       <div class="quiz-options">
         ${renderOpt('l2','q1','A', 'Finansdepartementet (regeringen)', 'C')}
         ${renderOpt('l2','q1','B', 'Storbankerna gemensamt (SEB, Swedbank etc.)', 'C')}
         ${renderOpt('l2','q1','C', 'Riksbanken (Sveriges centralbank)', 'C')}
       </div>
       ${l2.q1 === 'C'
-        ? `<div class="feedback ok">✓ Rätt! Riksbanken är oberoende från regeringen och bestämmer ensam om styrräntan (reporäntan).</div>
+        ? `<div class="feedback ok">✓ Rätt! Riksbanken är oberoende från regeringen och bestämmer ensam om reporänta (styr-ränta)n (styr-ränta).</div>
            <button class="btn-undo" onclick="resetQuiz('l2','q1')">↩ Ångra svar</button>`
         : l2.q1 ? `
         <div class="feedback err">✗ Fel svar. Försök igen!</div>
@@ -967,7 +1111,7 @@ function renderLevel2() {
     ${GS.housing === 'bostadsratt' ? `
     <div class="result-box neutral" style="margin-bottom:14px">
       <div style="font-size:13px;color:var(--muted);margin-bottom:8px">KONTANTINSATS (engångskostnad)</div>
-      <div style="font-size:22px;font-family:'Syne',sans-serif;font-weight:800;color:var(--warning)">${fmt(h.down)}</div>
+      <div style="font-size:22px;font-family:'Inter', Arial, Verdana, sans-serif;font-weight:800;color:var(--warning)">${fmt(h.down)}</div>
       <div style="font-size:13px;color:var(--muted);margin-top:4px">= 15% av köpeskilling ${fmt(h.price)}. Kan sparas ihop eller lånas av föräldrar.</div>
     </div>
     <div>
@@ -979,7 +1123,7 @@ function renderLevel2() {
       <div class="calc-row"><div class="calc-label">🛡️ Hemförsäkring</div><div class="calc-value">${fmt(h.insurance)}</div></div>
       <div class="calc-total">
         <strong>TOTALT / MÅN</strong>
-        <div class="value" style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--l2)">${fmt(h.total)}</div>
+        <div class="value" style="font-family:'Inter', Arial, Verdana, sans-serif;font-weight:800;font-size:22px;color:var(--l2)">${fmt(h.total)}</div>
       </div>
     </div>
     <div class="tooltip">💡 Amorteringskrav: Lånar du mer än 70% av bostadens värde → amorterar 2%/år. Mer än 85% → 3%/år. Banker ger normalt max 85%-lån.</div>
@@ -990,7 +1134,7 @@ function renderLevel2() {
     <div class="calc-row"><div class="calc-label">🛡️ Hemförsäkring</div><div class="calc-value">${fmt(h.insurance)}</div></div>
     <div class="calc-total">
       <strong>TOTALT / MÅN</strong>
-      <div class="value" style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--l2)">${fmt(h.total)}</div>
+      <div class="value" style="font-family:'Inter', Arial, Verdana, sans-serif;font-weight:800;font-size:22px;color:var(--l2)">${fmt(h.total)}</div>
     </div>
     <div class="tooltip">💡 Hyresrätt kräver ingen kontantinsats och du slipper bostadsrättens dolda risker — men du bygger inget eget kapital.</div>
     `}
@@ -1235,7 +1379,7 @@ function renderLevel3() {
   <div class="card accent-3">
     <div class="calc-total" style="${remaining < 0 ? 'border:1px solid var(--danger)' : remaining < 500 ? 'border:1px solid var(--warning)' : ''}">
       <strong>${remaining >= 500 ? '✅ Kvar att spara/övrigt' : remaining >= 0 ? '⚠️ Väldigt lite kvar' : '❌ UNDERSKOTT!'}</strong>
-      <div id="remainingVal" style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:${remaining < 0 ? 'var(--danger)' : remaining < 500 ? 'var(--warning)' : 'var(--success)'}">
+      <div id="remainingVal" style="font-family:'Inter', Arial, Verdana, sans-serif;font-weight:800;font-size:22px;color:${remaining < 0 ? 'var(--danger)' : remaining < 500 ? 'var(--warning)' : 'var(--success)'}">
         ${remaining < 0 ? '−' : '+'}${fmt(Math.abs(remaining))}
       </div>
     </div>
@@ -1352,12 +1496,62 @@ function renderLevel4() {
 
     <hr class="divider">
     <h3 style="margin-bottom:12px">🏎️ Bonus: Vad kostar ett billån?</h3>
-    <div class="fact-box" style="border-color:var(--l3)">
-      <strong>Räkna själv!</strong> Prova: 80 000 kr lån, 7% ränta, 60 månader. Vad blir månadsbetalningen?
-      Formel: <em>r × P / (1 − (1+r)^−n)</em> där r = månadsränta, P = lånebelopp, n = månader.
-      Eller räkna steg för steg med miniräknaren.
+
+    <div style="background:var(--warning-bg);border:2px solid var(--gold);border-radius:12px;padding:18px 22px;margin-bottom:14px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+        <span style="background:var(--gold);color:#fff;font-family:'Inter',Arial,sans-serif;font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:0.3px">🔢 RÄKNEEXEMPEL</span>
+        <span style="font-family:'Inter',Arial,sans-serif;font-size:16px;font-weight:800;color:var(--text)">Billån med annuitetsmodellen</span>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-bottom:14px;line-height:1.6">Samma månadsbetalning under hela lånetiden.</p>
+
+      <div style="background:#fff8ee;border:1px solid var(--warn-bd);border-radius:8px;padding:12px 16px;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--warn);margin-bottom:8px">Förutsättningar</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:14px">
+          <div>📦 Lånebelopp <strong>(P)</strong></div><div style="font-weight:700">80 000 kr</div>
+          <div>📈 Årsränta</div><div style="font-weight:700">7 %</div>
+          <div>📅 Löptid <strong>(n)</strong></div><div style="font-weight:700">60 månader</div>
+          <div>🔢 Månadsränta <strong>(r)</strong></div><div style="font-weight:700">0,07 ÷ 12 = 0,005833</div>
+        </div>
+      </div>
+
+      <div style="background:#fff8ee;border:1px solid var(--warn-bd);border-radius:8px;padding:12px 16px;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--warn);margin-bottom:8px">Annuitetsformeln</div>
+        <div style="font-family:'Inter',Arial,sans-serif;font-size:16px;font-weight:800;color:var(--l2);text-align:center;padding:10px;background:var(--info-bg);border-radius:7px;letter-spacing:0.5px">
+          Månadsbetalning = (r × P) / (1 − (1 + r)^(−n))
+        </div>
+      </div>
+
+      <div style="background:#fff8ee;border:1px solid var(--warn-bd);border-radius:8px;padding:12px 16px;margin-bottom:14px">
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--warn);margin-bottom:10px">Steg-för-steg-beräkning</div>
+        ${[
+          ['1', 'Månadsränta', 'r = 0,07 ÷ 12', '= 0,005833'],
+          ['2', '(1 + r)', '1 + 0,005833', '= 1,005833'],
+          ['3', '(1 + r)⁶⁰', '1,005833^60', '≈ 1,4176'],
+          ['4', '(1 + r)^(−60)', '1 ÷ 1,4176', '≈ 0,7054'],
+          ['5', 'Nämnaren', '1 − 0,7054', '= 0,2946'],
+          ['6', 'Täljaren', '0,005833 × 80 000', '= 466,67'],
+          ['7', 'Månadsbetalning', '466,67 ÷ 0,2946', '≈ 1 584 kr ✅'],
+        ].map(([n,label,calc,result]) => `
+          <div style="display:grid;grid-template-columns:24px 1fr 1fr 1fr;gap:6px 10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--warn-bd);font-size:13px">
+            <span style="width:22px;height:22px;background:var(--gold);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;flex-shrink:0">${n}</span>
+            <span style="font-weight:600;color:var(--text)">${label}</span>
+            <span style="color:var(--muted)">${calc}</span>
+            <span style="font-weight:700;color:${result.includes('✅')?'var(--success)':'var(--text)'}">${result}</span>
+          </div>`).join('')}
+      </div>
+
+      <div style="background:var(--success-bg);border:1px solid var(--success-border);border-radius:8px;padding:12px 16px;margin-bottom:14px;font-size:14px;line-height:1.6">
+        💡 <strong>Svar:</strong> Månadsbetalningen blir <strong style="color:var(--success)">1 584 kr/mån</strong> — konstant under hela lånets 60-månaders löptid.
+        Totalt betalar du <strong>95 040 kr</strong> för en bil som kostar 80 000 kr — det vill säga <strong style="color:var(--danger)">15 040 kr i ränta</strong>.
+      </div>
+
+      <div style="font-size:13px;color:var(--warn);font-weight:600;margin-bottom:10px">🧮 Nu är din tur — räkna det själv med miniräknaren:</div>
+      <button class="calc-open-btn" onclick="openCalc()" style="margin:0"><span class="calc-icon">🧮</span> Öppna miniräknaren</button>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.5">
+        Skriv: <code style="background:var(--bg);padding:2px 6px;border-radius:4px;font-size:12px;color:var(--l2)">7÷100÷12×80000÷(1−(1+7÷100÷12)^−60)</code>
+      </div>
     </div>
-    <button class="calc-open-btn" onclick="openCalc()"><span class="calc-icon">🧮</span> Öppna miniräknaren</button>
+
     <div class="fact-box" style="border-color:var(--l3)">
       Tillkommer: bensin, försäkring, service, skatt — typiskt 2 500–3 500 kr/mån extra. <strong>Total bilkostnad kan lätt bli 4 000–5 000 kr/mån.</strong>
     </div>
@@ -1481,7 +1675,7 @@ function renderLevel5() {
     ${monthsToBuffer ? `<div class="feedback ok">✓ Med ${fmt(savingsPerMonth)}/mån sparad når du din buffert på <strong>${monthsToBuffer} månader</strong> (${Math.ceil(monthsToBuffer/12)} år). ${monthsToBuffer <= 12 ? 'Utmärkt!' : monthsToBuffer <= 24 ? 'Bra tempo!' : 'Fundera på hur du kan öka månadssparandet.'}</div>` : `<div class="feedback err">❌ Du sparar ingenting just nu — det går inte att bygga en buffert. Gå tillbaka och trimma budgeten.</div>`}
     <button class="calc-open-btn" onclick="openCalc()"><span class="calc-icon">🧮</span> Öppna miniräknaren — beräkna månader till buffert</button>
     <hr class="divider">
-    <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:800;margin-bottom:10px">🏦 Bästa sparmodellerna</div>
+    <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:14px;font-weight:800;margin-bottom:10px">🏦 Bästa sparmodellerna</div>
     ${[
       { name: 'Sparkonto (buffert)', when: 'Direkt', why: 'Pengarna alltid tillgängliga. Passar bufferten perfekt. Låg risk, låg ränta. Välj ett konto med insättningsgaranti.', best: true },
       { name: 'ISK — Investeringssparkonto', when: 'När bufferten är klar', why: 'Köp billiga indexfonder (t.ex. Avanza Auto). Historisk avkastning ~7-8%/år. Schablonbeskattning — enkel deklaration.', best: true },
@@ -1510,7 +1704,7 @@ function renderLevel5() {
     </div>
     <div class="calc-total" style="margin-top:12px">
       <span>Genomsnittlig balans</span>
-      <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:20px;color:${avgScore>=7?'var(--success)':avgScore>=5?'var(--warning)':'var(--danger)'}">
+      <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-weight:800;font-size:20px;color:${avgScore>=7?'var(--success)':avgScore>=5?'var(--warning)':'var(--danger)'}">
         ${avgScore} / 10
       </div>
     </div>
@@ -1594,7 +1788,7 @@ function renderDone() {
   <div class="card" style="border-color:var(--success)">
     <div style="text-align:center;padding:8px 0">
       <div style="font-size:13px;color:var(--muted);margin-bottom:4px">EKONOMICERTIFIKAT</div>
-      <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;margin:8px 0">VUXENLIVET</div>
+      <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:24px;font-weight:800;margin:8px 0">VUXENLIVET</div>
       <div style="color:var(--muted);font-size:14px">har slutförts med godkänt resultat</div>
       <hr class="divider">
       <div class="info-grid">
@@ -1617,18 +1811,18 @@ function renderDone() {
     margin-bottom: 20px;
     text-align: center;
   ">
-    <div style="font-size: 40px; margin-bottom: 10px;">🔓</div>
-    <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--l1);margin-bottom:6px">
-      Provet är nu upplåst!
+    <div style="font-size: 40px; margin-bottom: 10px;">📝</div>
+    <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:22px;font-weight:800;color:var(--l1);margin-bottom:6px">
+      Dags för provet!
     </div>
     <p style="font-size:15px;color:var(--muted);line-height:1.6;margin-bottom:18px;max-width:480px;margin-left:auto;margin-right:auto">
-      Eftersom du klarat alla 5 nivåer i Vuxenlivet har du nu tillgång till provet i Privatekonomi för Samhällskunskap 1a. Du behöver 70% rätt för att bli godkänd.
+      Du har klarat alla 5 nivåer — nu är du redo att testa dina kunskaper i Privatekonomi för Samhällskunskap 1a. Du behöver 70% rätt för att bli godkänd.
     </p>
     <a href="privatekonomi_prov.html" style="
       display: inline-block;
       background: var(--l1);
       color: #fff;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', Arial, Verdana, sans-serif;
       font-size: 16px;
       font-weight: 800;
       padding: 16px 36px;
@@ -1640,7 +1834,7 @@ function renderDone() {
       📝 GÅ TILL PROVET →
     </a>
     <div style="font-size:12px;color:var(--muted);margin-top:12px">
-      Samhällskunskap 1a · Gy25 · 20 frågor · Godkänt = 70%
+      Samhällskunskap 1a · Gy25 · 20 frågor + 3 skrivfrågor · Godkänt = 70%
     </div>
   </div>
 
@@ -1656,6 +1850,12 @@ function renderDone() {
   <div class="btn-row">
     <button class="btn btn-secondary" onclick="resetGame()">🔄 Spela igen med annat yrke</button>
     <button class="print-btn" onclick="window.print()">🖨️ Skriv ut</button>
+  </div>
+  <div style="margin-top:16px;background:linear-gradient(135deg,#FEE2E2,#FEF0E8);border:2px solid var(--l1);border-radius:14px;padding:22px 24px;text-align:center">
+    <div style="font-size:32px;margin-bottom:8px">🚗</div>
+    <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:18px;font-weight:800;color:var(--l1);margin-bottom:6px">BONUSUPPDRAG: Bilbudgeten</div>
+    <p style="font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px;max-width:480px;margin-left:auto;margin-right:auto">Jämför en budgetbil för 29 900 kr med en nyare bil för 299 000 kr. Se hur räntan påverkar totalkostnaden — och skillnaden mellan nominell och effektiv ränta.</p>
+    <button class="btn" onclick="GS.screen='carbudget';render();window.scrollTo({top:0,behavior:'smooth'})">🚗 STARTA BILBUDGETEN →</button>
   </div>
   `;
 }
@@ -1786,7 +1986,15 @@ function resetGame() {
     l4: { choice: null },
     l5: { wheel: { jobb: 5, fritid: 5, motion: 5, familj: 5, vanner: 5, hobby: 5 } },
     attempts: { l1_q1:0, l1_q2:0, l1_net:0, l2_q1:0, l2_annual:0 },
-    car: { own: false, price: 120000, loanType: 'billan', rate: 7, months: 60, tax: 130, insurance: 500, service: 250, besiktning: 100, km: 1500, fuel: 0.8, fuelPrice: 22 },
+    car: {
+      own: false, price: 120000, loanType: 'billan',
+      rate: 7, months: 60,
+      tax: 130, insurance: 500, service: 250, besiktning: 100,
+      km: 1500, fuel: 0.8, fuelPrice: 22,
+      budIns: 1200, budFuel: 600, budService: 300,
+      premIns: 1800, premFuel: 900, premService: 500,
+    },
+    carQuiz: { answers: {}, done: false },
   });
   render();
   window.scrollTo({top: 0, behavior: 'smooth'});
@@ -1870,7 +2078,7 @@ function drawWheel() {
   });
 
   // Labels
-  ctx.font = '600 12px "DM Sans", sans-serif';
+  ctx.font = '600 12px "Inter", sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   AREAS.forEach((a, i) => {
@@ -1884,19 +2092,313 @@ function drawWheel() {
 
   // Center score
   const avg = (Object.values(w).reduce((a,b)=>a+b,0)/N).toFixed(1);
-  ctx.font = 'bold 22px "Syne", sans-serif';
+  ctx.font = 'bold 22px "Inter", Arial, sans-serif';
   ctx.fillStyle = '#1A2332';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText(avg, cx, cy-8);
-  ctx.font = '11px "DM Sans", sans-serif';
+  ctx.font = '11px "Inter", sans-serif';
   ctx.fillStyle = '#4A5568';
   ctx.fillText('snitt', cx, cy+12);
 }
 
 // ============================================================
-// INIT
+// CAR BUDGET COMPARISON
 // ============================================================
+function renderCarBudget() {
+  const c = GS.car;
+  const BUD_PRICE = 29900;
+  const PREM_PRICE = 299000;
+  const BUD_TAX = 89;        // kr/mån fordonsskatt (gammal bensinbil)
+  const PREM_TAX = 290;       // kr/mån (nyare bensin)
+  const BUD_BESIKNING = 50;   // kr/mån (vartannat år)
+  const PREM_BESIKTNING = 75;
+
+  function monthlyLoan(price, rateYearly, months) {
+    if (rateYearly === 0) return Math.round(price / months);
+    const r = rateYearly / 100 / 12;
+    return Math.round(price * r / (1 - Math.pow(1 + r, -months)));
+  }
+  function totalInterest(price, rateYearly, months) {
+    const m = monthlyLoan(price, rateYearly, months);
+    return Math.round(m * months - price);
+  }
+  // Effektiv ränta approximation (lägger på 2% uppläggningsavgift engångs)
+  function effRate(nomRate) {
+    // Approximera effektiv ränta inkl. uppläggning och aviavgift (~50kr/mån)
+    const avgFee = 50; // aviavgift kr/mån
+    return (nomRate + (avgFee * 12 / 100000 * 100)).toFixed(1); // approximation
+  }
+
+  const budLoan   = monthlyLoan(BUD_PRICE, c.rate, c.months);
+  const premLoan  = monthlyLoan(PREM_PRICE, c.rate, c.months);
+  const budTotal  = budLoan + BUD_TAX + c.budIns + c.budService + BUD_BESIKNING + Math.round(c.budFuel);
+  const premTotal = premLoan + PREM_TAX + c.premIns + c.premService + PREM_BESIKTNING + Math.round(c.premFuel);
+  const budInterest  = totalInterest(BUD_PRICE, c.rate, c.months);
+  const premInterest = totalInterest(PREM_PRICE, c.rate, c.months);
+
+  // Rate 5% reference for comparison
+  const budLoan5   = monthlyLoan(BUD_PRICE, 5, c.months);
+  const premLoan5  = monthlyLoan(PREM_PRICE, 5, c.months);
+  const budLoan20  = monthlyLoan(BUD_PRICE, 20, c.months);
+  const premLoan20 = monthlyLoan(PREM_PRICE, 20, c.months);
+
+  const rateThumbPct = Math.min((c.rate / 20) * 100, 100);
+
+  const QUIZ = [
+    { id:'cq1', q:'Du lånar 299 000 kr i 60 månader till 7% nominell ränta. Vad betalar du totalt i ränta?', opts:[`A) ${fmt(premInterest)}`,`B) 0 kr — du betalar bara tillbaka lånet`,'C) 299 000 kr','D) Ca 5 000 kr'], correct:'A', explain:`Månadsbetalning: ${fmt(premLoan)}. Totalt: ${fmt(premLoan*60)}. Ränta: ${fmt(premLoan*60 - PREM_PRICE)}. Det är vad du betalar utöver bilens pris.` },
+    { id:'cq2', q:'Vad är skillnaden mellan nominell ränta och effektiv ränta?', opts:['A) Nominell är lägre — effektiv är den verkliga kostnaden inkl. avgifter','B) Det är samma sak','C) Effektiv ränta gäller bara för bolån','D) Nominell ränta är alltid högre'], correct:'A', explain:'Nominell ränta = räntan utan avgifter. Effektiv ränta = räntan inklusive alla avgifter (uppläggning, aviavgifter). Jämför alltid effektiv ränta!' },
+    { id:'cq3', q:`Vad händer med månadsbetalningen på budgetbilen (${fmt(BUD_PRICE)}) om räntan stiger från 5% till 20%?`, opts:[`A) Ökar med ca ${fmt(budLoan20 - budLoan5)}/mån`,`B) Ökar med ca ${fmt(Math.round((budLoan20-budLoan5)/2))}/mån`,'C) Ingenting — lånet är fast','D) Minskar eftersom banken kompenserar'], correct:'A', explain:`Vid 5%: ${fmt(budLoan5)}/mån. Vid 20%: ${fmt(budLoan20)}/mån. Skillnad: ${fmt(budLoan20-budLoan5)}/mån. En fördubbling av räntan kan mer än dubblera räntekostnaden!` },
+    { id:'cq4', q:'Vilken kostnadspost är STÖRST för en bil förutom lånebetalningen?', opts:['A) Besiktning','B) Fordonsskatt','C) Försäkring','D) Registreringsavgift'], correct:'C', explain:'Bilförsäkringen är typiskt den näst största utgiften efter lånet — 1 000–2 500 kr/mån beroende på bil och förare. Jämför alltid försäkringar!' },
+    { id:'cq5', q:`En person väljer premiumbilden (${fmt(PREM_PRICE)}) istället för budgetbilen (${fmt(BUD_PRICE)}). Hur mycket mer kostar det per månad i totalkostnad (vid ${c.rate}% ränta)?`, opts:[`A) ${fmt(premTotal - budTotal)}/mån`,`B) ${fmt(PREM_PRICE - BUD_PRICE)}/mån`,'C) Ungefär lika mycket','D) Det beror bara på räntan'], correct:'A', explain:`Budgetbil: ${fmt(budTotal)}/mån. Premiumbilden: ${fmt(premTotal)}/mån. Skillnad: ${fmt(premTotal - budTotal)}/mån = ${fmt((premTotal-budTotal)*12)}/år = ${fmt((premTotal-budTotal)*60)} på 5 år!` },
+  ];
+
+  const quizDone = Object.keys(GS.carQuiz.answers).length === QUIZ.length;
+  const quizCorrect = QUIZ.filter(q => GS.carQuiz.answers[q.id] === q.correct).length;
+  const LETTERS = ['A','B','C','D'];
+
+  return `
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+    <button class="btn btn-secondary" style="padding:8px 14px;font-size:13px" onclick="GS.screen='done';render()">← Tillbaka</button>
+    <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:18px;font-weight:800">🚗 Bilbudgeten — Jämförelse</div>
+  </div>
+
+  <!-- CAR CARDS -->
+  <div class="car-card-wrap">
+    <div class="car-card budget-car">
+      <img class="car-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Toyota_Yaris_1.3_VVT-i_front.JPG/800px-Toyota_Yaris_1.3_VVT-i_front.JPG"
+           alt="Toyota Yaris" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="car-img-err" style="display:none">🚗</div>
+      <div class="car-details">
+        <span class="car-badge budget">💰 BUDGETBIL</span>
+        <div class="car-name">Toyota Yaris 1.3 VVT-i</div>
+        <div class="car-spec">2008 · 1,3L bensin · 5-dörrar · 8 000 mil<br>Blocket-annons · Privatköp · Privat säljare</div>
+        <div class="car-price-tag bud">${fmt(BUD_PRICE)}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">Typisk Blocket-annons</div>
+      </div>
+    </div>
+    <div class="car-card premium-car">
+      <img class="car-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/2015_Volkswagen_Golf%2C_Front_Right%2C_08-05-2020.jpg/800px-2015_Volkswagen_Golf%2C_Front_Right%2C_08-05-2020.jpg"
+           alt="VW Golf" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="car-img-err" style="display:none">🚙</div>
+      <div class="car-details">
+        <span class="car-badge premium">⭐ NYARE BIL</span>
+        <div class="car-name">Volkswagen Golf 1.5 TSI</div>
+        <div class="car-spec">2019 · 1,5L bensin · 5-dörrar · 3 000 mil<br>Blocket-annons · Billhandlare · Moms ingår</div>
+        <div class="car-price-tag prem">${fmt(PREM_PRICE)}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px">Typisk Blocket-annons</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOMINELL vs EFFEKTIV RÄNTA -->
+  <div class="card">
+    <h3 style="margin-bottom:10px">📊 Nominell vs Effektiv ränta — vad är skillnaden?</h3>
+    <div class="nom-eff-box">
+      <strong>Nominell ränta</strong> — räntesatsen banken annonserar. <em>Inkluderar inte avgifter.</em><br><br>
+      <strong>Effektiv ränta</strong> — den verkliga lånekostnaden per år, inklusive <em>alla</em> avgifter: uppläggningsavgift, aviavgifter, kontoavgifter. Alltid högre än nominell ränta.<br><br>
+      <strong>Lag:</strong> Banker är skyldiga att uppge effektiv ränta vid marknadsföring av lån. Jämför <u>alltid</u> effektiv ränta — aldrig nominell!
+    </div>
+    <table class="compare-table">
+      <tr><th>Exempel</th><th>Nominell ränta</th><th>Effektiv ränta</th><th>Skillnad/år</th></tr>
+      <tr><td>Billån bank</td><td>7,0%</td><td class="danger">~7,8%</td><td>+800 kr/år per 100 000</td></tr>
+      <tr><td>Privatlån fintech</td><td>12,0%</td><td class="danger">~14,5%</td><td>+2 500 kr/år per 100 000</td></tr>
+      <tr><td>SMS-lån</td><td class="danger">20,0%</td><td class="danger">24–400%</td><td>Extremt dyrt!</td></tr>
+    </table>
+  </div>
+
+  <!-- RÄNTESLIDER -->
+  <div class="card accent-4">
+    <h3 style="margin-bottom:4px">🎚️ Ränteeffekten — hur påverkar räntan din månadskostnad?</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Dra i slidern och se hur månadsbetalningen förändras för båda bilarna.</p>
+
+    <div class="slider-row">
+      <div class="slider-label">💰 Årsränta (%)</div>
+      <input type="range" min="0" max="20" step="0.5" value="${c.rate}"
+        oninput="GS.car.rate=+this.value;renderCarLive()">
+      <div class="slider-val" id="car_rate_val" style="color:${c.rate>=15?'var(--danger)':c.rate>=10?'var(--warning)':'var(--success)'}">${c.rate}%</div>
+    </div>
+    <div class="rate-gradient">
+      <div class="rate-thumb" id="rateThumb" style="left:${rateThumbPct}%"></div>
+    </div>
+    <div class="rate-labels"><span>0% (räntefritt)</span><span>10%</span><span>20% (farlig zon)</span></div>
+
+    <div class="slider-row" style="margin-top:14px">
+      <div class="slider-label">📅 Löptid (mån)</div>
+      <input type="range" min="12" max="84" step="12" value="${c.months}"
+        oninput="GS.car.months=+this.value;renderCarLive()">
+      <div class="slider-val" id="car_months_val">${c.months} mån</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+      <div class="info-cell">
+        <div class="label">🟢 Budgetbil — Lån/mån</div>
+        <div class="value green" id="bud_loan_val">${fmt(budLoan)}</div>
+      </div>
+      <div class="info-cell">
+        <div class="label">🔵 Premiumbilden — Lån/mån</div>
+        <div class="value blue" id="prem_loan_val">${fmt(premLoan)}</div>
+      </div>
+      <div class="info-cell">
+        <div class="label">Total räntekostnad — Budget</div>
+        <div class="value" style="color:var(--danger);font-size:16px" id="bud_int_val">${fmt(budInterest)}</div>
+      </div>
+      <div class="info-cell">
+        <div class="label">Total räntekostnad — Premium</div>
+        <div class="value" style="color:var(--danger);font-size:16px" id="prem_int_val">${fmt(premInterest)}</div>
+      </div>
+    </div>
+
+    ${c.rate >= 15 ? `<div class="feedback err" style="margin-top:12px">⚠️ <strong>Farlig zon!</strong> ${c.rate}% ränta är extremt hög. Vid ${c.rate}% betalar du ${fmt(premInterest)} kr extra i ränta på premiumbilden — nästan en halv bil i ränta!</div>` :
+      c.rate >= 10 ? `<div class="feedback info" style="margin-top:12px">⚠️ ${c.rate}% är hög ränta. Jämför alltid effektiv ränta och förhandla med banken innan du skriver på.</div>` :
+      `<div class="feedback ok" style="margin-top:12px">✓ ${c.rate}% är en rimlig ränta för ett billån. Jämför ändå med minst 3 banker!</div>`}
+  </div>
+
+  <!-- FULL COST SLIDERS -->
+  <div class="card">
+    <h3 style="margin-bottom:14px">💡 Alla kostnader — justera och jämför</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div>
+        <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:13px;font-weight:800;color:var(--success);margin-bottom:10px">🟢 BUDGETBIL</div>
+        <div class="slider-row"><div class="slider-label" style="width:100px;font-size:13px">🛡️ Försäkring</div><input type="range" min="600" max="3000" step="50" value="${c.budIns}" oninput="GS.car.budIns=+this.value;renderCarLive()"><div class="slider-val" id="bud_ins_val" style="font-size:13px">${fmt(c.budIns)}</div></div>
+        <div class="slider-row"><div class="slider-label" style="width:100px;font-size:13px">⛽ Bränsle</div><input type="range" min="200" max="2000" step="50" value="${c.budFuel}" oninput="GS.car.budFuel=+this.value;renderCarLive()"><div class="slider-val" id="bud_fuel_val" style="font-size:13px">${fmt(c.budFuel)}</div></div>
+        <div class="slider-row"><div class="slider-label" style="width:100px;font-size:13px">🔧 Service</div><input type="range" min="100" max="1500" step="50" value="${c.budService}" oninput="GS.car.budService=+this.value;renderCarLive()"><div class="slider-val" id="bud_serv_val" style="font-size:13px">${fmt(c.budService)}</div></div>
+      </div>
+      <div>
+        <div style="font-family:'Inter', Arial, Verdana, sans-serif;font-size:13px;font-weight:800;color:var(--l2);margin-bottom:10px">🔵 PREMIUMBILDEN</div>
+        <div class="slider-row"><div class="slider-label" style="width:100px;font-size:13px">🛡️ Försäkring</div><input type="range" min="600" max="3000" step="50" value="${c.premIns}" oninput="GS.car.premIns=+this.value;renderCarLive()"><div class="slider-val" id="prem_ins_val" style="font-size:13px">${fmt(c.premIns)}</div></div>
+        <div class="slider-row"><div class="slider-label" style="width:100px;font-size:13px">⛽ Bränsle</div><input type="range" min="200" max="2000" step="50" value="${c.premFuel}" oninput="GS.car.premFuel=+this.value;renderCarLive()"><div class="slider-val" id="prem_fuel_val" style="font-size:13px">${fmt(c.premFuel)}</div></div>
+        <div class="slider-row"><div class="slider-label" style="width:100px;font-size:13px">🔧 Service</div><input type="range" min="100" max="1500" step="50" value="${c.premService}" oninput="GS.car.premService=+this.value;renderCarLive()"><div class="slider-val" id="prem_serv_val" style="font-size:13px">${fmt(c.premService)}</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOTAL COMPARISON TABLE -->
+  <div class="card accent-5">
+    <h3 style="margin-bottom:14px">📋 Fullständig kostnadssammanställning/mån</h3>
+    <table class="compare-table">
+      <tr><th>Kostnadspost</th><th>🟢 Budgetbil</th><th>🔵 Premiumbilden</th></tr>
+      <tr><td>Lånekostnad (${c.rate}%, ${c.months} mån)</td><td id="ct_bud_loan">${fmt(budLoan)}</td><td id="ct_prem_loan">${fmt(premLoan)}</td></tr>
+      <tr><td>Fordonsskatt</td><td>${fmt(BUD_TAX)}</td><td>${fmt(PREM_TAX)}</td></tr>
+      <tr><td>Försäkring</td><td id="ct_bud_ins">${fmt(c.budIns)}</td><td id="ct_prem_ins">${fmt(c.premIns)}</td></tr>
+      <tr><td>Bränsle</td><td id="ct_bud_fuel">${fmt(c.budFuel)}</td><td id="ct_prem_fuel">${fmt(c.premFuel)}</td></tr>
+      <tr><td>Service & reparation</td><td id="ct_bud_serv">${fmt(c.budService)}</td><td id="ct_prem_serv">${fmt(c.premService)}</td></tr>
+      <tr><td>Besiktning (per mån)</td><td>${fmt(BUD_BESIKNING)}</td><td>${fmt(PREM_BESIKTNING)}</td></tr>
+      <tr><td><strong>TOTALT / MÅN</strong></td><td class="ok" id="ct_bud_total"><strong>${fmt(budTotal)}</strong></td><td class="danger" id="ct_prem_total"><strong>${fmt(premTotal)}</strong></td></tr>
+    </table>
+    <div class="total-compare">
+      <div class="total-box bud">
+        <div class="tbl">🟢 Budgetbil totalt/mån</div>
+        <div class="tbv" id="tb_bud">${fmt(budTotal)}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">= ${fmt(budTotal*12)}/år</div>
+      </div>
+      <div class="total-box prem">
+        <div class="tbl">🔵 Premiumbilden totalt/mån</div>
+        <div class="tbv" id="tb_prem">${fmt(premTotal)}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">= ${fmt(premTotal*12)}/år</div>
+      </div>
+    </div>
+    <div class="fact-box" style="border-color:var(--l1)">
+      💡 <strong>Skillnaden per månad: ${fmt(premTotal - budTotal)}</strong> — det är ${fmt((premTotal-budTotal)*12)}/år och ${fmt((premTotal-budTotal)*60)} på 5 år. Med den skillnaden kan du spara ihop en ny budgetbil varje ${Math.round(BUD_PRICE/(premTotal-budTotal))} månader!
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="card">
+    <h3 style="margin-bottom:4px">🧠 Kontrollfrågorna — Bilbudgeten</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:16px">Svara rätt på alla 5 för att slutföra bilbudgeten.</p>
+    ${QUIZ.map((q, qi) => {
+      const ans = GS.carQuiz.answers[q.id];
+      const answered = ans !== undefined;
+      return `
+      <div class="quiz-section" style="margin-bottom:16px">
+        <div class="quiz-q">❓ Fråga ${qi+1}: ${q.q}</div>
+        <div class="quiz-options">
+          ${q.opts.map((opt, i) => {
+            const letter = LETTERS[i];
+            const isChosen = answered && ans === letter;
+            const isCorrect = letter === q.correct;
+            let cls = '';
+            if (answered) {
+              if (isChosen && isCorrect) cls = 'correct locked';
+              else if (isChosen && !isCorrect) cls = 'wrong locked';
+              else if (isCorrect) cls = 'show-correct locked';
+              else cls = 'locked';
+            }
+            return `<button class="quiz-opt ${cls}" onclick="${answered ? '' : `carQuizAnswer('${q.id}','${letter}')`}">${opt.replace(/^[A-D]\)\s*/,'')}</button>`;
+          }).join('')}
+        </div>
+        ${answered ? `<div class="feedback ${ans === q.correct ? 'ok' : 'err'}">${ans === q.correct ? '✓ Rätt! ' : '✗ Fel. '}${q.explain}</div>` : ''}
+      </div>`;
+    }).join('')}
+    ${quizDone ? `
+    <div class="approved-banner">
+      <div class="approved-check">🚗</div>
+      <div>
+        <div class="approved-title">BILBUDGETEN KLAR! ${quizCorrect}/5 rätt</div>
+        <div class="approved-sub">Du förstår nu hur bil-ekonomi fungerar på riktigt.</div>
+      </div>
+    </div>` : ''}
+  </div>
+  `;
+}
+
+function carQuizAnswer(qid, letter) {
+  GS.carQuiz.answers[qid] = letter;
+  render();
+}
+
+function renderCarLive() {
+  const c = GS.car;
+  const BUD_PRICE = 29900, PREM_PRICE = 299000;
+  const BUD_TAX=89, PREM_TAX=290, BUD_BES=50, PREM_BES=75;
+  function ml(price, rate, months) {
+    if (rate===0) return Math.round(price/months);
+    const r=rate/100/12;
+    return Math.round(price*r/(1-Math.pow(1+r,-months)));
+  }
+  const bL=ml(BUD_PRICE,c.rate,c.months);
+  const pL=ml(PREM_PRICE,c.rate,c.months);
+  const bInt=Math.round(bL*c.months-BUD_PRICE);
+  const pInt=Math.round(pL*c.months-PREM_PRICE);
+  const bT=bL+BUD_TAX+c.budIns+c.budService+BUD_BES+Math.round(c.budFuel);
+  const pT=pL+PREM_TAX+c.premIns+c.premService+PREM_BES+Math.round(c.premFuel);
+
+  const rateColor = c.rate>=15?'var(--danger)':c.rate>=10?'var(--warning)':'var(--success)';
+  const ids = {
+    car_rate_val:[c.rate+'%',rateColor],
+    car_months_val:[c.months+' mån',null],
+    rateThumb:null,
+    bud_loan_val:[fmt(bL),'var(--success)'],
+    prem_loan_val:[fmt(pL),'var(--l2)'],
+    bud_int_val:[fmt(bInt),'var(--danger)'],
+    prem_int_val:[fmt(pInt),'var(--danger)'],
+    bud_ins_val:[fmt(c.budIns),null],
+    bud_fuel_val:[fmt(c.budFuel),null],
+    bud_serv_val:[fmt(c.budService),null],
+    prem_ins_val:[fmt(c.premIns),null],
+    prem_fuel_val:[fmt(c.premFuel),null],
+    prem_serv_val:[fmt(c.premService),null],
+    ct_bud_loan:[fmt(bL),null],
+    ct_prem_loan:[fmt(pL),null],
+    ct_bud_ins:[fmt(c.budIns),null],
+    ct_prem_ins:[fmt(c.premIns),null],
+    ct_bud_fuel:[fmt(c.budFuel),null],
+    ct_prem_fuel:[fmt(c.premFuel),null],
+    ct_bud_serv:[fmt(c.budService),null],
+    ct_prem_serv:[fmt(c.premService),null],
+    ct_bud_total:['<strong>'+fmt(bT)+'</strong>','var(--ok)'],
+    ct_prem_total:['<strong>'+fmt(pT)+'</strong>','var(--danger)'],
+    tb_bud:[fmt(bT),'var(--ok)'],
+    tb_prem:[fmt(pT),'var(--l2)'],
+  };
+  Object.entries(ids).forEach(([id, val]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (id==='rateThumb') { el.style.left=Math.min((c.rate/20)*100,100)+'%'; return; }
+    if (val) { el.innerHTML=val[0]; if(val[1]) el.style.color=val[1]; }
+  });
+}
 render();
 </script>
 </body>
